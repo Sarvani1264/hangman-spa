@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hangman.css">
+    <title>Hang man</title>
+</head>
+<body>
+    <div id="initialpage">
+        <div id="description">
+            <h2>Guess the hidden word before the hangman is complete!</h2>
+        </div>
+        <div class="buttons">
+            <button id="play" onclick="play()">&#9654;</button>
+            <button id="easy" onclick="level(easy)" style="display: none;">Easy</button>
+            <button id="medium" onclick="level(medium)" style="display: none;">Medium</button>
+            <button id="hard" onclick="level(hard)" style="display: none;">Hard</button>
+        </div>
+    </div>
+    <div id="gamepage" style="display: none;">
+        <div id="word_guess">
+            <div id="man">
+                <svg width="800" height="800">
+                    <line x1="100" y1="50" x2="600" y2="50" stroke="black" stroke-width="5"/>
+                    <line x1="100" y1="47" x2="100" y2="420" stroke="black" stroke-width="5"/>
+                    <line x1="350" y1="50" x2="350" y2="120" stroke="black" stroke-width="5"/>
+                    <line x1="100" y1="420" x2="600" y2="420" stroke="black" stroke-width="5"/>
+                    <circle id="head" cx="350" cy="160" r="40" stroke="#133d38" stroke-width="5" fill="#285949" class="part"/>
+                    <line id="body" x1="350" y1="200" x2="350" y2="320" stroke="#133d38" stroke-width="8" stroke-linecap="round" class="part"/>
+                    <line id="left-arm" x1="350" y1="220" x2="280" y2="280" stroke="#133d38" stroke-width="8" stroke-linecap="round" class="part"/>
+                    <line id="right-arm" x1="350" y1="220" x2="418" y2="280" stroke="#133d38" stroke-width="8" stroke-linecap="round" class="part"/>
+                    <line id="left-leg" x1="350" y1="320" x2="280" y2="390" stroke="#133d38" stroke-width="8" stroke-linecap="round" class="part"/>
+                    <line id="right-leg" x1="350" y1="320" x2="418" y2="390" stroke="#133d38" stroke-width="8" stroke-linecap="round" class="part"/>
+                </svg>
+            </div>
+            <div id="word">
+                <p style="font-size: medium; font-weight: bold;">Guess the word before the man hangs! </p>
+                <div id="word_display"></div>
+                <p id="result"></p>
+                <div id="return">
+                    <button id="restart" onclick="restart()">Restart</button>
+                    <button id="home" onclick="home()">Home</button>
+                </div>
+            </div>
+        </div>
+        <div id="keyboard">
+            <div id="box"></div>
+        </div>
+    </div>
+    <script src="hangman.js"></script>
+</body>
+</html>
