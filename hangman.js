@@ -52,6 +52,10 @@ function input_word(letter){
         result.innerHTML="*** YOU LOST ***";
         return;
     }
+    if(!current_word.includes("_")){
+        result.innerHTML="*** YOU WON ***";
+        return;
+    }
     buttons=buttons.filter(ltr => ltr!==letter);
     createbuttons(buttons);
     if(guess_word.includes(letter)){
